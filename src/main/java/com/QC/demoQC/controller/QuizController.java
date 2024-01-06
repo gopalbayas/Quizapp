@@ -1,5 +1,4 @@
 package com.QC.demoQC.controller;
-
 import com.QC.demoQC.model.QuestionWrapper;
 import com.QC.demoQC.model.Response;
 import com.QC.demoQC.service.QuizService;
@@ -7,7 +6,6 @@ import com.QC.demoQC.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -22,13 +20,11 @@ public class QuizController {
     @GetMapping("get/{id}")
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id){
         return quizService.getQuizQuestions(id);
-
     }
 
     @PostMapping("submit/{id}")
     public ResponseEntity<Integer> submitQuiz(@PathVariable Integer id, @RequestBody List<Response> responses){
         return quizService.calculateResult(id, responses);
     }
-
 
 }
