@@ -1,5 +1,4 @@
 package com.QC.demoQC.service;
-
 import com.QC.demoQC.dao.QuestionDao;
 import com.QC.demoQC.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,4 +38,5 @@ public class QuestionService {
     questionDao.save(question);
     return new ResponseEntity<>("Success", HttpStatus.CREATED);
     }
+    
 }
